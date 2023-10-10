@@ -1,0 +1,17 @@
+version: '3.3'
+
+services:
+  delivery-order-service:
+    image: gabrielferreira/delivery-order
+    restart: always
+    container_name: gabrielferreira_delivery_order
+    expose:
+      - "3306"
+      - "8080"
+    ports:
+      - "3306:3306"
+    networks:
+      - delivery-app-net
+
+networks:
+  delivery-app-net: { }

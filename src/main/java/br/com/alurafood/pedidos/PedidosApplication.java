@@ -1,15 +1,25 @@
 package br.com.alurafood.pedidos;
 
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.boot.ApplicationArguments;
+import org.springframework.boot.ApplicationRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 
+@Slf4j
 @SpringBootApplication
-@EnableEurekaClient
-public class PedidosApplication {
+public class PedidosApplication implements ApplicationRunner {
+
+	@Value("${spring.datasource.url}")
+	private String url;
 
 	public static void main(String[] args) {
 		SpringApplication.run(PedidosApplication.class, args);
 	}
 
+	@Override
+	public void run(ApplicationArguments args) throws Exception {
+		log.info("{}",url);
+	}
 }
