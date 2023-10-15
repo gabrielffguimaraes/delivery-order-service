@@ -2,7 +2,7 @@ version: '3.3'
 
 services:
   delivery-order-service:
-    image: gabrielferreira/delivery-order-service
+    image: 04894/delivery-order-service
     restart: always
     container_name: gabrielferreira_delivery_order
     expose:
