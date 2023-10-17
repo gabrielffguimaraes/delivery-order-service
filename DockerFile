@@ -4,10 +4,7 @@ USER spring
 VOLUME /tmp
 EXPOSE 8080
 
-ENV MYSQL_HOST=host
-ENV MYSQL_USERNAME=username
-ENV MYSQL_PASSWORD=password
-
-
 COPY target/*.jar app.jar
 ENTRYPOINT ["java","-jar","/app.jar"]
+
+

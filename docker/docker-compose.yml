@@ -11,6 +11,10 @@ services:
       - "8080:8080"
     networks:
       - delivery-app-net
+    environment:
+      - SPRING_DATASOURCE_URL=url
+      - SPRING_DATASOURCE_USERNAME=username
+      - SPRING_DATASOURCE_PASSWORD=password
 
 networks:
   delivery-app-net: { }
